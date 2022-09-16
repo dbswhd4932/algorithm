@@ -11,17 +11,17 @@ public class _4375 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        while(sc.hasNextInt()) {
+        while (sc.hasNextInt()) {
             int n = sc.nextInt();
-            int num = 0;
-            int count = 0;
+            int answer = 0;
+            int count = 0 ;
 
             while(true) {
-                num = num * 10 + 1;
-                num = num % n;
+                answer = answer * 10 + 1;
+                answer = answer % n;
                 count++;
 
-                if(num == 0 ) {
+                if ( answer % n == 0 ) {
                     System.out.println(count);
                     break;
                 }
