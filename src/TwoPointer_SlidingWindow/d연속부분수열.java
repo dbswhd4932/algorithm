@@ -1,26 +1,35 @@
 package TwoPointer_SlidingWindow;
 /**
- * 풀이날짜 22.10.03
- * 걸린시간 00:25
- * 슬라이딩 윈도우문제
+ * 풀이날짜 22.10.04
+ * 걸린시간 00:15
  */
 
 import java.util.Scanner;
 
-public class c최대매출 {
+public class d연속부분수열 {
     public static int solution(int n, int k, int[] arr) {
         int answer = 0;
-        int sum = 0;
-        for (int i = 0; i < k; i++) {
-            sum += arr[i];
-        }
 
-        answer = sum;
-        for (int i = k; i < n; i++) {
-            sum += (arr[i] - arr[i - k]);
-            answer = Math.max(answer, sum);
-        }
+        int s = 0;
+        int e = 1;
 
+        while (e < n) {
+            int sum = 0;
+            for (int i = s; i <= e; i++) {
+                sum += arr[i];
+            }
+
+            if (k > sum) {
+                e++;
+            }
+            if (k < sum) {
+                s++;
+            }
+            if (k == sum) {
+                answer++;
+                e++;
+            }
+        }
         return answer;
     }
 
