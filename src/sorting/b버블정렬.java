@@ -1,22 +1,20 @@
 package sorting;
 /**
- * 풀이날짜 22.10.24
+ * 풀이날짜 22.10.26
  * 걸린시간 00:11
  */
 import java.util.Scanner;
 
-public class a선택정렬 {
+public class b버블정렬 {
     static int[] solution(int n, int[] arr) {
         for (int i = 0; i < n-1; i++) {
-            int idx = i;
             for (int j = i+1; j < n; j++) {
-                if ( arr[j] < arr[idx]) {
-                    idx = j;
+                if ( arr[i] > arr[j]) {
+                    int tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
                 }
             }
-            int tmp = arr[i];
-            arr[i] = arr[idx];
-            arr[idx] = tmp;
         }
         return arr;
     }
