@@ -1,6 +1,6 @@
 package Recursive_Tree_Graph;
 
-public class Main {
+public class d피보나치재귀_메모이제이션 {
 
     static int [] fibo;
 
