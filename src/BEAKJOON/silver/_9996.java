@@ -1,8 +1,6 @@
 package BEAKJOON.silver;
 
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class _9996 {
     public static void main(String[] args) {
