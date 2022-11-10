@@ -15,11 +15,12 @@ public class _15649 {
             System.out.println();
         } else {
             for (int i = 1; i <= n; i++) {
-                if (check[i] == 1) continue;
-                check[i] = 1;
-                arr[depth] = i;
-                DFS(depth + 1);
-                check[i] = 0;
+                if (check[i] == 0) {
+                    check[i] = 1;
+                    arr[depth] = i;
+                    DFS(depth + 1);
+                    check[i] = 0;
+                }
             }
         }
     }
