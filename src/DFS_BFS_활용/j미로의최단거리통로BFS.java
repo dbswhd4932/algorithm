@@ -4,10 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-class Point {
+class Point2 {
     public int x, y;
 
-    Point(int x, int y) {
+    Point2(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -22,17 +22,17 @@ public class j미로의최단거리통로BFS {
 
 
     public void BFS(int x, int y) {
-        Queue<Point> queue = new LinkedList<>();
-        queue.add(new Point(x, y));
+        Queue<Point2> queue = new LinkedList<>();
+        queue.add(new Point2(x, y));
         board[x][y] = 1; // 출발점 체크
         while (!queue.isEmpty()) {
-            Point cur = queue.poll();
+            Point2 cur = queue.poll();
             for (int i = 0; i < 4; i++) {
                 int nx = cur.x + dx[i];
                 int ny = cur.y + dy[i];
                 if (nx >= 1 && ny >= 1 && nx < 8 && ny < 8 && board[nx][ny] == 0) {
                     board[nx][ny] = 1;
-                    queue.add(new Point(nx,ny));
+                    queue.add(new Point2(nx,ny));
                     dis[nx][ny] = dis[cur.x][cur.y] + 1;
                 }
             }
