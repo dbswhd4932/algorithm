@@ -21,18 +21,6 @@ public class l섬나라아일랜드DFS {
         }
     }
 
-    public void solution(int[][] board) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (board[i][j] == 1) {
-                    answer++;
-                    board[i][j] = 0; // 처음 시작하는 지점
-                    DFS(i, j, board);
-                }
-            }
-        }
-    }
-
     public static void main(String[] args) {
         l섬나라아일랜드DFS T = new l섬나라아일랜드DFS();
         Scanner sc = new Scanner(System.in);
@@ -44,7 +32,17 @@ public class l섬나라아일랜드DFS {
                 board[i][j] = sc.nextInt();
             }
         }
-        T.solution(board);
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if ( board[i][j] == 1) {
+                    answer++;
+                    board[i][j] = 0;
+                    T.DFS(i,j,board);
+                }
+            }
+        }
+
         System.out.println(answer);
 
     }
